@@ -1,4 +1,3 @@
-// useRegisterUser.js
 import { useCallback, useState } from "react";
 import { isSupportedChain } from "../utils";
 import { getProvider } from "../constants/providers";
@@ -13,7 +12,7 @@ const useRegisterUser = () => {
   const { walletProvider } = useWeb3ModalProvider();
   const [success, setSuccess] = useState(false); // State variable to track success status
 
-  const registerUser = useCallback(async (name) => {
+  const registerUser = useCallback(async (ensName) => {
     if (!isSupportedChain(chainId)) {
       console.error("Wrong network");
       return false;
@@ -24,12 +23,12 @@ const useRegisterUser = () => {
     const contract = getEnsContract(signer);
 
     try {
-      const transaction = await contract.registerUser(name);
+      const transaction = await contract.registerUser(ensName);
       const receipt = await transaction.wait();
 
       if (receipt.status) {
         console.log("User Registration successful!");
-        setSuccess(true); // Update success status
+        setSuccess(true); // Update success statu
         return true;
       } else {
         console.log("User registration failed!");

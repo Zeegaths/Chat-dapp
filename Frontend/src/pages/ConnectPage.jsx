@@ -8,13 +8,13 @@ const ConnectPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Redirect only if connected
-    if (isConnected) {
-      navigate("/signUp");
+    // Redirect if not connected
+    if (!isConnected) {
+      navigate("/");
     }
   }, [isConnected, navigate]);
 
-  // Do not render anything if not connected
+  // Render only if not connected
   if (!isConnected) {
     return (
       <div>        
@@ -24,7 +24,7 @@ const ConnectPage = () => {
     );
   }
 
-  // Return null if connected, as the redirect will handle navigation
+  // Return null if connected, navigation will handle redirection
   return null;
 };
 

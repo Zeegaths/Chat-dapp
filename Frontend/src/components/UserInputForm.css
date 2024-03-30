@@ -1,14 +1,16 @@
 .form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Center vertically */
+  position: fixed;
+  top: 50px; /* Adjust as needed */
+  right: 50px; /* Adjust as needed */
   background-color: #8a2be2; /* Purple background color */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .user-input-form {
   background-color: black;
-  padding: 50px;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -19,13 +21,13 @@ label {
 }
 
 input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  width: calc(100% - 20px); /* Adjust padding */
+  padding: 5px;
+  margin-bottom: 5px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 8px 16px; /* Adjust padding */
   background-color: #4b0082; /* Dark purple button color */
   color: white;
   border: none;
